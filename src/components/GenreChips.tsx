@@ -9,7 +9,7 @@ type Props = {
 function GenreChips({ selected, disabled, onSelect }: Props) {
   return (
     <div className="mb-16 flex flex-wrap gap-2">
-      {Object.keys(GENRES).map((g) => (
+      {GENRES.map((g) => (
         <button
           key={g}
           onClick={() => onSelect(g)}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import GenreChips from "./components/GenreChips";
 import Logo from "./components/Logo";
 import MovieCard from "./components/MovieCard";
-import { HAS_KEY, suggest, type Movie } from "./tmdb";
+import { suggest, type Movie } from "./tmdb";
 
 function App() {
   const [genre, setGenre] = useState<string | null>(null);
@@ -36,10 +36,6 @@ function App() {
       <main className="mx-auto max-w-4xl px-6 pt-12 pb-20">
         <Logo />
         <h1 className="mb-8 max-w-[16ch] font-display text-4xl leading-none font-extrabold tracking-tight md:text-6xl">What are you in the mood for?</h1>
-
-        {!HAS_KEY && (
-          <p className="mb-4 text-red-300">Add VITE_TMDB_KEY to .env.local, then restart the dev server.</p>
-        )}
         {error && <p className="mb-4 text-red-300">Couldn't load a movie ({error}). Try again.</p>}
 
         <GenreChips selected={genre} disabled={loading} onSelect={pick} />
