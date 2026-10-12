@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-display: "Syne", system-ui, sans-serif;
+  --color-ink: #0d0c11;
+  --color-paper: #f2f1f5;
+  --color-muted: #9d9bab;
+  --animate-enter: enter 0.5s ease-out;
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+}
+
+body {
+  @apply min-h-screen bg-ink font-sans text-paper;
+}
